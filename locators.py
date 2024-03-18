@@ -11,20 +11,20 @@ class MainPageLocators:
     order_feed_btn = (By.XPATH, ".//p[text() = 'Лента Заказов']")  # Кнопка лента заказов
     bun_btn = (By.XPATH, ".//span[text() = 'Булки']")  # Кнопка переключения на булки
     sauces_btn = (By.XPATH, ".//span[text() = 'Соусы']")  # Кнопка переключения на соусы
-    toppings_btn = (By.XPATH, ".//span[text() = 'Начинки']")  # Кнопка переключения на начинки
+    toppings_btn = toppings_btn = (By.XPATH, ".//span[text() = 'Начинки']")  # Кнопка переключения на начинки
     place_order_button = (By.XPATH, ".//button[text() = 'Оформить заказ']")  # Кнопка оформить заказ
     sauces = (By.XPATH, ".//h2[text() = 'Соусы']")  # Текст соусы на главной странице
     sauces_ul = (
         By.XPATH,
-        "(.//ul[@class = 'BurgerIngredients_ingredients__list__2A-mT'])[2]")  # Выбор соусов на главной странице
+        ".//h2[text() = 'Соусы']/following-sibling::ul[@class = 'BurgerIngredients_ingredients__list__2A-mT']")  # Выбор соусов на главной странице
     bun = (By.XPATH, ".//h2[text() = 'Булки']")  # Текст булки на главной странице
     bun_ul = (
         By.XPATH,
-        "(.//ul[@class = 'BurgerIngredients_ingredients__list__2A-mT'])[1]")  # Выбор булок на главной странице
+        ".//h2[text() = 'Булки']/following-sibling::ul[@class = 'BurgerIngredients_ingredients__list__2A-mT']")  # Выбор булок на главной странице
     topping = (By.XPATH, ".//h2[text() = 'Начинки']")  # Текст начинки на главной странице
     topping_ul = (
         By.XPATH,
-        "(.//ul[@class = 'BurgerIngredients_ingredients__list__2A-mT'])[3]")  # Выбор начинок на главной странице
+        ".//h2[text() = 'Начинки']/following-sibling::ul[@class = 'BurgerIngredients_ingredients__list__2A-mT']")  # Выбор начинок на главной странице
 
 
 class AuthPageLocators:
@@ -43,9 +43,9 @@ class AuthPageLocators:
 
 class RegistrationPageLocators:
     """Форма регистрации"""
-    name_input = (By.XPATH, "(.//input[@name = 'name'])[1]")  # Поле ввода имени
-    email_input = (By.XPATH, "(.//input[@name = 'name'])[2]")  # Поле ввода email
-    password_input = (By.XPATH, ".//input[@name = 'Пароль']")  # Поле ввода пароля
+    name_input = (By.XPATH, ".//label[text()='Имя']/following-sibling::input[@name='name']")  # Поле ввода имени
+    email_input = (By.XPATH, ".//label[text()='Email']/following-sibling::input[@name='name']")  # Поле ввода email
+    password_input = (By.XPATH, ".//label[text()='Пароль']/following-sibling::input[@name='Пароль']")  # Поле ввода пароля
     registration_btn = (By.XPATH, ".//button[text() = 'Зарегистрироваться']")  # Кнопка зерегистрироваться
     login_account_btn = (By.XPATH, ".//a[text() = 'Войти']")  # Кнопка войти
     constructor_btn = (By.XPATH, ".//p[text() = 'Конструктор']")  # Кнопка конструктор
